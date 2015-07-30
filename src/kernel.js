@@ -5,17 +5,6 @@ import MsgWrapper from './msg-wrapper';
 
 const DELIM = '<IDS|MSG>';
 
-function makeHeader(msgType, parentHeader) {
-  console.log('MAKING HEADER', msgType);
-  return {
-    'date': new Date().toISOString(),
-    'msg_id': uuid.v4(),
-    'username': parentHeader.username,
-    'session': parentHeader.session,
-    'msg_type': msgType
-  };
-}
-
 export default class Kernel {
   constructor(config) {
     this.exiting = false;
